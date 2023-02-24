@@ -1,21 +1,18 @@
-NAME = megaphone
-
-cpp = c++
-
+NAME = PhoneBook
+CPP = c++
 FLAGS = -Wall -Wextra -Werror
 FLAGS_CPP98 = -std=c++98
-SRCS = PhoneBook.cpp\
-       
-
+SRCS =	Contact.cpp PhoneBook.cpp main.cpp
+HEADER = Contact.hpp PhoneBook.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(cpp) $(FLAGS) $(FLAGS_CPP98) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS) $(HEADER) $(HEADER_PHONEBOOK)
+	$(CPP) $(FLAGS) $(FLAGS_CPP98) $(OBJS) -o $(NAME)
 
-megaphone.o: megaphone.cpp
-	$(cpp) $(FLAGS) $(FLAGS_CPP98) -c $< -o $@
+%.o:%.cpp $(HEADER)
+	$(CPP) $(FLAGS) $(FLAGS_CPP98) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
@@ -25,4 +22,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY:all clean fclean re
+.PHONY: all clean fclean re
