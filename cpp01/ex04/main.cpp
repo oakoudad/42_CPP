@@ -1,5 +1,4 @@
-#include <iostream>
-#include <fstream>
+#include "replace.hpp"
 
 void    replace(std::string &line, size_t &pos, size_t len, std::string &str)
 {
