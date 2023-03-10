@@ -13,7 +13,7 @@ void p()
 
 int main()
 {
-    int n = 5;
+    int n = 0;
     Zombie *p = zombieHorde(n, "Omar");
 
     for(int i = 0; i < n; i++)
