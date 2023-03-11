@@ -1,4 +1,4 @@
-NAME = violence
+NAME = Violence
 CPP = c++
 FLAGS = -Wall -Wextra -Werror
 FLAGS_CPP98 = -std=c++98

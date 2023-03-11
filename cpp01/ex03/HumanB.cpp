@@ -1,10 +1,9 @@
-#include "Weapon.hpp"
 #include "HumanB.hpp"
 
-HumanB::HumanB( std::string the_name)
+HumanB::HumanB( std::string name)
 {
     gun = NULL;
-    name = the_name;
+    this->name = name;
 }
 
 HumanB::~HumanB()
@@ -12,9 +11,9 @@ HumanB::~HumanB()
     std::cout << "HumanB Destructed" << std::endl;
 }
 
-void    HumanB::setWeapon(Weapon &the_gun)
+void    HumanB::setWeapon(Weapon &gun)
 {
-    gun = &the_gun;
+    this->gun = &gun;
 }
 
 void    HumanB::attack()const
