@@ -1,10 +1,12 @@
-NAME = Replace
+NAME = Fixed02
 CPP = c++
 FLAGS = -Wall -Wextra -Werror
 FLAGS_CPP98 = -std=c++98
-SRCS =	main.cpp\
-		Replace.cpp
-HEADER = Replace.hpp
+SRCS =		Fixed.cpp\
+			main.cpp\
+
+HEADER =	Fixed.hpp
+
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

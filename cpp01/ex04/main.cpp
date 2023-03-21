@@ -1,29 +1,4 @@
-#include "replace.hpp"
-
-void    replace(std::string &line, size_t &pos, size_t len, std::string &str)
-{
-    line.erase(pos, len);
-    line.insert(pos, str);
-    pos += str.length();
-}
-
-void    transfer(std::ifstream &in, std::ofstream &out, char* argv[])
-{
-    std::string line;
-    std::string s1 = argv[2];
-    std::string s2 = argv[3];
-    size_t pos;
-
-    int i = 1;
-    while (std::getline(in, line)) {
-        pos = 0;
-        while ((pos = line.find(s1, pos)) != -1)
-            replace(line, pos, s1.length(), s2);
-        out << line << std::endl;
-        i++;
-    }
-}
-
+#include "Replace.hpp"
 
 int     main(int argc, char* argv[])
 {
