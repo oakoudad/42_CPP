@@ -3,9 +3,10 @@ CPP = c++
 FLAGS = -Wall -Wextra -Werror
 FLAGS_CPP98 = -std=c++98
 SRCS =		ClapTrap.cpp\
+			ScavTrap.cpp\
 			main.cpp\
 
-HEADER =	ClapTrap.hpp
+HEADER =	ClapTrap.hpp ScavTrap.hpp 
 
 OBJS = $(SRCS:.cpp=.o)
 
