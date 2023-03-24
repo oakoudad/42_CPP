@@ -14,11 +14,11 @@ void    values( unsigned int h, unsigned int e, unsigned int d )
 
 ClapTrap::ClapTrap()
 {
-    name    = "";
+    name    = "Default name";
     hit     = 10;
     energy  = 10;
     damage  = 0;
-    std::cout << name << "Empty name constructed." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Default constructor (ClapTrap)." << std::endl << std::endl;
 }
 
 ClapTrap::ClapTrap( const std::string name )
@@ -27,16 +27,18 @@ ClapTrap::ClapTrap( const std::string name )
     hit         = 10;
     energy      = 10;
     damage      = 0;
-    std::cout << name << " constructed." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Parameterized constructor (ClapTrap)." << std::endl << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap &obj )
 {
+    std::cout << nameColor(name) << " Copy constructor (ClapTrap)." << std::endl << std::endl;
     *this = obj;
 }
 
 ClapTrap   &ClapTrap::operator =(const ClapTrap &rhs)
 {
+    std::cout << nameColor(name) << " Copy Assignment operator (ClapTrap)." << std::endl << std::endl;
     if (&rhs != this)
     {
         this->name      = rhs.name;
@@ -52,7 +54,7 @@ void ClapTrap::attack(const std::string& target)
     if ((int)energy && (int)hit)
     {
         energy--;
-        std::cout << "ClapTrap \"" << name << "\" attacks " << target << ", causing " << damage << " points of damage!" << std::endl;
+        std::cout << "ClapTrap " << nameColor(name) << " attacks " << target << ", causing " << damage << " points of damage!" << std::endl;
         values(hit, energy, damage);
     }
     else
@@ -98,5 +100,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 
 ClapTrap::~ClapTrap(){
-    std::cout << std::endl << name << " destructor." << std::endl;
+    std::cout << std::endl << nameColor(name) << " Destructor (ClapTrap)." << std::endl;
 }

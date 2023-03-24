@@ -14,29 +14,31 @@ void    values( unsigned int h, unsigned int e, unsigned int d )
 
 ScavTrap::ScavTrap()
 {
-    name    = "";
+    name    = "Default name";
     hit     = 100;
     energy  = 100;
     damage  = 30;
-    std::cout << name << "Empty name constructed." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Default constructor (ScavTrap)." << std::endl << std::endl;
 }
 
 ScavTrap::ScavTrap( const std::string name )
 {
     this->name  = name;
-    hit         = 10;
-    energy      = 10;
-    damage      = 0;
-    std::cout << name << " constructed." << std::endl << std::endl;
+    hit         = 100;
+    energy      = 100;
+    damage      = 30;
+    std::cout << nameColor(name) << " Parameterized constructor (ScavTrap)." << std::endl << std::endl;
 }
 
 ScavTrap::ScavTrap( const ClapTrap &obj )
 {
+    std::cout << nameColor(name) << " Copy constructor (ScavTrap)." << std::endl << std::endl;
     *this = obj;
 }
 
 ScavTrap   &ScavTrap::operator =(const ScavTrap &rhs)
 {
+    std::cout << nameColor(name) << " Copy Assignment operator (ScavTrap)." << std::endl << std::endl;
     if (&rhs != this)
     {
         this->name      = rhs.name;
@@ -52,7 +54,7 @@ void ScavTrap::attack(const std::string& target)
     if ((int)energy && (int)hit)
     {
         energy--;
-        std::cout << "ClapTrap " << nameColor(name) << " attacks " << target << ", causing " << damage << " points of damage!" << std::endl;
+        std::cout << "ScavTrap " << nameColor(name) << " attacks " << target << ", causing " << damage << " points of damage!" << std::endl;
         values(hit, energy, damage);
     }
     else
@@ -60,4 +62,9 @@ void ScavTrap::attack(const std::string& target)
         std::cout << nameColor(name) << " can’t do anything." << std::endl;
         values(hit, energy, damage);
     }
+}
+
+ScavTrap::~ScavTrap()
+{
+    std::cout << std::endl << nameColor(name) << " Destructor (ScavTrap)." << std::endl;
 }

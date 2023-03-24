@@ -14,11 +14,11 @@ void    values( unsigned int h, unsigned int e, unsigned int d )
 
 ClapTrap::ClapTrap()
 {
-    name    = "";
+    name    = "Default name";
     hit     = 10;
     energy  = 10;
     damage  = 0;
-    std::cout << nameColor(name) << "Empty name constructed." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Default constructor." << std::endl << std::endl;
 }
 
 ClapTrap::ClapTrap( const std::string name )
@@ -27,16 +27,18 @@ ClapTrap::ClapTrap( const std::string name )
     hit         = 10;
     energy      = 10;
     damage      = 0;
-    std::cout << nameColor(name) << " constructed." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Parameterized constructor." << std::endl << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap &obj )
 {
+    std::cout << nameColor(name) << " Copy constructor." << std::endl << std::endl;
     *this = obj;
 }
 
 ClapTrap   &ClapTrap::operator =(const ClapTrap &rhs)
 {
+    std::cout << nameColor(name) << " Copy Assignment operator." << std::endl << std::endl;
     if (&rhs != this)
     {
         this->name      = rhs.name;
@@ -96,7 +98,6 @@ void ClapTrap::beRepaired(unsigned int amount)
     }
 }
 
-
 ClapTrap::~ClapTrap(){
-    std::cout << std::endl << nameColor(name) << " destructor." << std::endl;
+    std::cout << std::endl << nameColor(name) << " Destructor." << std::endl;
 }
