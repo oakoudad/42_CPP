@@ -2,14 +2,14 @@
 
 std::string nameColor(std::string n)
 {
-    return "\033[1;30m" + n + "\033[0m";
+    return "\033[1;29m" + n + "\033[0m";
 }
 
 void    values( unsigned int h, unsigned int e, unsigned int d )
 {
-    std::cout << " ● Hit points    : " << h << std::endl;
-    std::cout << " ● Energy points : " << e << std::endl;
-    std::cout << " ● Attack damage : " << d << std::endl << std::endl;
+    std::cout << "\033[1;30m// Hit points    : " << h << std::endl;
+    std::cout << "// Energy points : " << e << std::endl;
+    std::cout << "// Attack damage : " << d << "\033[0m" << std::endl << std::endl;
 }
 
 ClapTrap::ClapTrap()
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap()
     hit     = 10;
     energy  = 10;
     damage  = 0;
-    std::cout << name << "Empty name constructed." << std::endl << std::endl;
+    std::cout << nameColor(name) << "Empty name constructed." << std::endl << std::endl;
 }
 
 ClapTrap::ClapTrap( const std::string name )
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap( const std::string name )
     hit         = 10;
     energy      = 10;
     damage      = 0;
-    std::cout << name << " constructed." << std::endl << std::endl;
+    std::cout << nameColor(name) << " constructed." << std::endl << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap &obj )
@@ -52,7 +52,7 @@ void ClapTrap::attack(const std::string& target)
     if ((int)energy && (int)hit)
     {
         energy--;
-        std::cout << "ClapTrap \"" << name << "\" attacks " << target << ", causing " << damage << " points of damage!" << std::endl;
+        std::cout << "ClapTrap " << nameColor(name) << " attacks " << target << ", causing " << damage << " points of damage!" << std::endl;
         values(hit, energy, damage);
     }
     else
@@ -98,5 +98,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 
 ClapTrap::~ClapTrap(){
-    std::cout << std::endl << name << " destructor." << std::endl;
+    std::cout << std::endl << nameColor(name) << " destructor." << std::endl;
 }
