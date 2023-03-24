@@ -52,7 +52,7 @@ void ScavTrap::attack(const std::string& target)
     if ((int)energy && (int)hit)
     {
         energy--;
-        std::cout << "ClapTrap \"" << name << "\" attacks " << target << ", causing " << damage << " points of damage!" << std::endl;
+        std::cout << "ClapTrap " << nameColor(name) << " attacks " << target << ", causing " << damage << " points of damage!" << std::endl;
         values(hit, energy, damage);
     }
     else
