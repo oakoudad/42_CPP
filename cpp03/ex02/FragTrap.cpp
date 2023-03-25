@@ -6,7 +6,7 @@ FragTrap::FragTrap()
     hit     = 100;
     energy  = 100;
     damage  = 30;
-    std::cout << nameColor(name) << " Default constructor (FragTrap)." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Default constructor (FragTrap)." << std::endl;
 }
 
 FragTrap::FragTrap( const std::string name )
@@ -15,18 +15,18 @@ FragTrap::FragTrap( const std::string name )
     hit         = 100;
     energy      = 100;
     damage      = 30;
-    std::cout << nameColor(name) << " Parameterized constructor (FragTrap)." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Parameterized constructor (FragTrap)." << std::endl;
 }
 
 FragTrap::FragTrap( const FragTrap &obj )
 {
-    std::cout << nameColor(name) << " Copy constructor (FragTrap)." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Copy constructor (FragTrap)." << std::endl;
     *this = obj;
 }
 
 FragTrap   &FragTrap::operator =(const FragTrap &rhs)
 {
-    std::cout << nameColor(name) << " Copy Assignment operator (FragTrap)." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Copy Assignment operator (FragTrap)." << std::endl;
     if (&rhs != this)
     {
         this->name      = rhs.name;
@@ -44,5 +44,5 @@ void    FragTrap::highFivesGuys()
 
 FragTrap::~FragTrap()
 {
-    std::cout << std::endl << nameColor(name) << " Destructor (FragTrap)." << std::endl;
+    std::cout << nameColor(name) << " Destructor (FragTrap)." << std::endl;
 }

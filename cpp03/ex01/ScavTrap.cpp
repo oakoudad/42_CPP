@@ -6,7 +6,7 @@ ScavTrap::ScavTrap()
     hit     = 100;
     energy  = 100;
     damage  = 30;
-    std::cout << nameColor(name) << " Default constructor (ScavTrap)." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Default constructor (ScavTrap)." << std::endl;
 }
 
 ScavTrap::ScavTrap( const std::string name )
@@ -15,18 +15,18 @@ ScavTrap::ScavTrap( const std::string name )
     hit         = 100;
     energy      = 100;
     damage      = 30;
-    std::cout << nameColor(name) << " Parameterized constructor (ScavTrap)." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Parameterized constructor (ScavTrap)." << std::endl;
 }
 
 ScavTrap::ScavTrap( const ScavTrap &obj )
 {
-    std::cout << nameColor(name) << " Copy constructor (ScavTrap)." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Copy constructor (ScavTrap)." << std::endl;
     *this = obj;
 }
 
 ScavTrap   &ScavTrap::operator =(const ScavTrap &rhs)
 {
-    std::cout << nameColor(name) << " Copy Assignment operator (ScavTrap)." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Copy Assignment operator (ScavTrap)." << std::endl;
     if (&rhs != this)
     {
         this->name      = rhs.name;
@@ -54,10 +54,10 @@ void ScavTrap::attack(const std::string& target)
 
 void    ScavTrap::guardGate()
 {
-    std::cout << "The " << nameColor(name) << " in Gate keeper mode." << std::endl << std::endl;
+    std::cout << "The " << nameColor(name) << " in Gate keeper mode." << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << std::endl << nameColor(name) << " Destructor (ScavTrap)." << std::endl;
+    std::cout << nameColor(name) << " Destructor (ScavTrap)." << std::endl;
 }

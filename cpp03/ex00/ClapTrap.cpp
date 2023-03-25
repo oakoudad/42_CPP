@@ -9,7 +9,7 @@ void    values( unsigned int h, unsigned int e, unsigned int d )
 {
     std::cout << "\033[1;30m// Hit points    : " << h << std::endl;
     std::cout << "// Energy points : " << e << std::endl;
-    std::cout << "// Attack damage : " << d << "\033[0m" << std::endl << std::endl;
+    std::cout << "// Attack damage : " << d << "\033[0m" << std::endl;
 }
 
 ClapTrap::ClapTrap()
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap()
     hit     = 10;
     energy  = 10;
     damage  = 0;
-    std::cout << nameColor(name) << " Default constructor." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Default constructor." << std::endl;
 }
 
 ClapTrap::ClapTrap( const std::string name )
@@ -27,18 +27,18 @@ ClapTrap::ClapTrap( const std::string name )
     hit         = 10;
     energy      = 10;
     damage      = 0;
-    std::cout << nameColor(name) << " Parameterized constructor." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Parameterized constructor." << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap &obj )
 {
-    std::cout << nameColor(name) << " Copy constructor." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Copy constructor." << std::endl;
     *this = obj;
 }
 
 ClapTrap   &ClapTrap::operator =(const ClapTrap &rhs)
 {
-    std::cout << nameColor(name) << " Copy Assignment operator." << std::endl << std::endl;
+    std::cout << nameColor(name) << " Copy Assignment operator." << std::endl;
     if (&rhs != this)
     {
         this->name      = rhs.name;

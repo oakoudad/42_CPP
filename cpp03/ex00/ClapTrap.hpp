@@ -9,7 +9,6 @@ class   ClapTrap {
         unsigned int    hit;
         unsigned int    energy;
         unsigned int    damage;
-
     public :
         ClapTrap();
         ClapTrap( const std::string name );
@@ -20,7 +19,6 @@ class   ClapTrap {
         void    takeDamage( unsigned int amoun );
         void    beRepaired( unsigned int amount );
         ~ClapTrap();
-
 };
 
 #endif

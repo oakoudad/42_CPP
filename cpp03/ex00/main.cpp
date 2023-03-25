@@ -19,6 +19,7 @@ int main()
     clapTrap.attack("Enemy");
     clapTrap.attack("Enemy");
     clapTrap.takeDamage(5);
+    
     clapTrap.beRepaired(10);
     return 0;
 }
