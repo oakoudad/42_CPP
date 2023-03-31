@@ -1,15 +1,19 @@
 
 #include "Ice.hpp"
+#include "Cure.hpp"
 #include "Character.hpp"
 
 int main()
 {
-    AMateria *p = new Ice();
-    Ice *p2 = new Ice();
-    std::cout << p->getType() << std::endl;
+    ICharacter* me = new Character();
+    ICharacter* bob = new Character("bob");
 
-    ICharacter* me = new Character("me");
+    std::cout << me->getName() << std::endl;
 
-    p->use(me);
-    std::cout << p2->getType() << std::endl;
+
+    me->equip(new Cure());
+    
+    me->use(0, *bob);
+    delete bob;
+    delete me;
 }
