@@ -1,16 +1,14 @@
-NAME = Brain
+NAME = Char
 CPP = c++
 FLAGS = -Wall -Wextra -Werror
 FLAGS_CPP98 = -std=c++98
-SRCS =		Animal.cpp\
-			Cat.cpp\
-			Dog.cpp\
-			WrongAnimal.cpp\
-			WrongCat.cpp\
-			Brain.cpp\
+SRCS =		AMateria.cpp\
+			Character.cpp\
+			Cure.cpp\
+			Ice.cpp\
 			main.cpp
 
-HEADER =	Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
+# HEADER =	AMateria.hpp Character.hpp Cure.hpp ICharacter.hpp Ice.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -19,7 +17,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CPP) $(FLAGS) $(FLAGS_CPP98) $(OBJS) -o $(NAME)
 
-%.o: %.cpp ${HEADER}
+%.o: %.cpp *.hpp
 	$(CPP) $(FLAGS) $(FLAGS_CPP98) -c $< -o $@
 
 clean:

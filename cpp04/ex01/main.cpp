@@ -3,22 +3,36 @@
 #include "WrongCat.hpp"
 #include "Brain.hpp"
 
-void p()
+void test01()
 {
-    Animal *j = new Animal[2];
-    std::cout << "___" << std::endl;
+    const Animal *N[4];
 
-    j[0] = Cat();
-    std::cout << "___" << std::endl;
-    j[1] = Cat();
-    std::cout << "___" << std::endl;
-    delete []j;
+    std::cout << "____" << std::endl;
+    for (int i = 0; i < 4; i++)
+    {
+        if (i % 2)
+            N[i] = new Dog();
+        else
+            N[i] = new Cat();
+        N[i]->makeSound();
+        std::cout << "_________________" << std::endl;
+    }
+
+    for (int i = 0; i < 4; i++)
+    {
+        delete N[i];
+        std::cout << "____" << std::endl;
+    }
+    
 }
 
 int main()
 {
+    test01();
     {
-        p();
+        Cat c;
+
+        Cat d = c;
     }
     while(1);
     return 0;

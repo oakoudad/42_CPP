@@ -2,15 +2,14 @@ NAME = Brain
 CPP = c++
 FLAGS = -Wall -Wextra -Werror
 FLAGS_CPP98 = -std=c++98
-SRCS =		Animal.cpp\
-			Cat.cpp\
+SRCS =		Cat.cpp\
 			Dog.cpp\
 			WrongAnimal.cpp\
 			WrongCat.cpp\
 			Brain.cpp\
 			main.cpp
 
-HEADER =	Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
+HEADER =	Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

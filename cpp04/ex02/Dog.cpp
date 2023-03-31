@@ -24,6 +24,11 @@ Dog::Dog( const Dog &obj ){
     *this = obj;
 }
 
+std::string Dog::getType() const
+{
+    return (type);
+}
+
 void Dog::makeSound() const
 {
     std::cout << "Hau, hau (Dog sound)." << std::endl;

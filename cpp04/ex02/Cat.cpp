@@ -19,15 +19,16 @@ Cat   &Cat::operator =(const Cat &rhs)
     return (*this);
 }
 
+std::string Cat::getType() const
+{
+    return (type);
+}
+
 Cat::Cat( const Cat &obj ){
     std::cout << "Cat Copy Constructor." << std::endl;
     *this = obj;
 }
 
-std::string Cat::getType() const
-{
-    return (type);
-}
 void Cat::makeSound() const
 {
     std::cout << "Meow, meow (Cat sound)." << std::endl;
