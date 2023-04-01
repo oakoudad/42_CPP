@@ -3,7 +3,7 @@
 #include "WrongCat.hpp"
 #include "Brain.hpp"
 
-void test01()
+int main()
 {
     const Animal *N[4];
 
@@ -15,6 +15,7 @@ void test01()
         else
             N[i] = new Cat();
         N[i]->makeSound();
+        std::cout << N[i]->getIdea(5) << std::endl;
         std::cout << "_________________" << std::endl;
     }
 
@@ -23,17 +24,5 @@ void test01()
         delete N[i];
         std::cout << "____" << std::endl;
     }
-    
-}
-
-int main()
-{
-    test01();
-    {
-        Cat c;
-
-        Cat d = c;
-    }
-    while(1);
     return 0;
 }

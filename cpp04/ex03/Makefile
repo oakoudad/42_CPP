@@ -6,9 +6,9 @@ SRCS =		AMateria.cpp\
 			Character.cpp\
 			Cure.cpp\
 			Ice.cpp\
+			MateriaSource.cpp\
 			main.cpp
 
-# HEADER =	AMateria.hpp Character.hpp Cure.hpp ICharacter.hpp Ice.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

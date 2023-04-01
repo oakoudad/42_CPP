@@ -28,6 +28,12 @@ std::string Animal::getType() const
     return (type);
 }
 
+std::string Animal::getIdea(int index) const
+{
+    (void)index;
+    return ("");
+}
+
 Animal::~Animal()
 {
     std::cout << "Animal destructor." << std::endl;

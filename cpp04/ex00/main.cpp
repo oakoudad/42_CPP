@@ -2,7 +2,8 @@
 #include "Dog.hpp"
 #include "WrongCat.hpp"
 
-void p()
+
+int main()
 {
     const Animal* j = new Dog();
 
@@ -11,11 +12,7 @@ void p()
     j->makeSound();
     
     delete j;
-}
 
-int main()
-{
-    p();
     std::cout << "_________" << std::endl;
     const WrongAnimal* j = new WrongCat();
 
@@ -24,6 +21,5 @@ int main()
     j->makeSound();
     
     delete (j);
-    while(1);
     return 0;
 }

@@ -17,7 +17,10 @@ Character &Character::operator =(const Character &rhs)
         this->name = rhs.name;
         for(int i = 0; i < 4; i++)
             if (rhs.slot[i] != NULL)
+            {
+                delete this->slot[i];
                 this->slot[i] = rhs.slot[i]->clone();
+            }
     }
     return (*this);
 }
@@ -42,6 +45,12 @@ void Character::equip(AMateria* m)
             return ;
         }
     }
+    std::cerr << "Slots is full." << std::endl;
+}
+
+AMateria            *Character::getMateria(int idx)
+{
+    return (this->slot[idx]);
 }
 
 void Character::unequip(int idx)
@@ -60,7 +69,7 @@ void Character::use(int idx, ICharacter& target)
     }
     if (slot[idx] == NULL)
     {
-        std::cerr << "Slot #" << std::to_string(idx) << " is Empty." << std::endl;
+        std::cerr << "Slot #" << idx << " is Empty." << std::endl;
         return ;
     }
     this->slot[idx]->use(target);

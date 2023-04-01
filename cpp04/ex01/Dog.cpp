@@ -24,6 +24,11 @@ Dog::Dog( const Dog &obj ){
     *this = obj;
 }
 
+std::string Dog::getIdea(int index) const
+{
+    return (this->brain->getIdea(index));
+}
+
 void Dog::makeSound() const
 {
     std::cout << "Hau, hau (Dog sound)." << std::endl;

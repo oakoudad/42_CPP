@@ -29,6 +29,11 @@ std::string Dog::getType() const
     return (type);
 }
 
+std::string Dog::getIdea(int index) const
+{
+    return (this->brain->getIdea(index));
+}
+
 void Dog::makeSound() const
 {
     std::cout << "Hau, hau (Dog sound)." << std::endl;

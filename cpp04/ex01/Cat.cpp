@@ -24,10 +24,11 @@ Cat::Cat( const Cat &obj ){
     *this = obj;
 }
 
-std::string Cat::getType() const
+std::string Cat::getIdea(int index) const
 {
-    return (type);
+    return (this->brain->getIdea(index));
 }
+
 void Cat::makeSound() const
 {
     std::cout << "Meow, meow (Cat sound)." << std::endl;
