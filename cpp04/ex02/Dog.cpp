@@ -39,6 +39,11 @@ void Dog::makeSound() const
     std::cout << "Hau, hau (Dog sound)." << std::endl;
 }
 
+void Dog::setIdea(int index, const std::string s)
+{
+    this->brain->setIdea(index, s);
+}
+
 Dog::~Dog()
 {
     std::cout << "Dog destructor." << std::endl;

@@ -8,6 +8,7 @@ class MateriaSource: public IMateriaSource
 {
     private:
         AMateria *save[4];
+    
     public:
         MateriaSource();
         MateriaSource( const MateriaSource &obj );

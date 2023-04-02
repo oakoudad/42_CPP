@@ -37,6 +37,8 @@ std::string const   &Character::getName() const
 
 void Character::equip(AMateria* m)
 {
+    if (!m)
+        return ;
     for (int i = 0; i < 4; i++)
     {
         if (slot[i] == NULL)
@@ -55,6 +57,8 @@ AMateria            *Character::getMateria(int idx)
 
 void Character::unequip(int idx)
 {
+    if (idx < 0 || idx > 3)
+        return ;
     if (slot[idx] != NULL)
         delete slot[idx];
     slot[idx] = NULL;

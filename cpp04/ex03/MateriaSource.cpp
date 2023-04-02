@@ -23,14 +23,16 @@ MateriaSource::MateriaSource( const MateriaSource &obj )
 
 void        MateriaSource::learnMateria(AMateria *m)
 {
-    for (int i = 0; i < 4; i++)
-        if (save[i] == NULL)
-        {
-            save[i] = m;
-            return ;
-        }
-    
-    std::cerr << "Slots is full." << std::endl;
+    if (m)
+    {
+        for (int i = 0; i < 4; i++)
+            if (save[i] == NULL)
+            {
+                save[i] = m->clone();
+                break ;
+            }
+        delete m;
+    }
 }
 
 AMateria*   MateriaSource::createMateria(std::string const & type)

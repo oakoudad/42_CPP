@@ -38,8 +38,12 @@ std::string Brain::getIdea(int index) const
 {
     if (index >= 0 && index < 100)
         return (this->ideas[index]);
-    std::cerr << "(Brain) This index is not valid." << std::endl;
-    return ("");
+    return ("(Brain) This index is not valid.");
+}
+void Brain::setIdea(int index, const std::string s)
+{
+    if (index >= 0 && index < 100)
+        this->ideas[index] = s;
 }
 
 Brain::~Brain()

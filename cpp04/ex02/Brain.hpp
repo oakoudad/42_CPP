@@ -13,6 +13,7 @@ class   Brain {
         Brain &operator =(const Brain &rhs);
 
         std::string getIdea(int index) const;
+        void setIdea(int index, const std::string s);
         ~Brain();
 };
 

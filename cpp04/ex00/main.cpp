@@ -2,24 +2,64 @@
 #include "Dog.hpp"
 #include "WrongCat.hpp"
 
+void test00()
+{
+    std::cout << "_________ TEST 00 START _________" << std::endl;
+    const Animal* dog = new Dog();
+
+    std::cout << dog->getType() << std::endl;
+   
+    dog->makeSound();
+    
+    delete dog;
+    std::cout << "_________ TEST 00 END _________" << std::endl << std::endl;
+}
+
+void test01()
+{
+    std::cout << "_________ TEST 01 START _________" << std::endl;
+    const Cat* cat = new Cat();
+
+    std::cout << cat->getType() << std::endl;
+   
+    cat->makeSound();
+    
+    delete cat;
+    std::cout << "_________ TEST 01 END _________" << std::endl << std::endl;
+}
+
+void test02()
+{
+    std::cout << "_________ TEST 02 START _________" << std::endl;
+    const Animal* animal = new Animal();
+
+    std::cout << animal->getType() << std::endl;
+   
+    animal->makeSound();
+    
+    delete (animal);
+    std::cout << "_________ TEST 02 END _________" << std::endl << std::endl;
+}
+
+void test03()
+{
+    std::cout << "_________ TEST 02 START _________" << std::endl;
+    const WrongAnimal* wrong = new WrongCat();
+
+    std::cout << wrong->getType() << std::endl;
+   
+    wrong->makeSound();
+    
+    delete (wrong);
+    std::cout << "_________ TEST 02 END _________" << std::endl << std::endl;
+}
 
 int main()
 {
-    const Animal* j = new Dog();
+    test00();
+    test01();
+    test02();
+    test03();
 
-    std::cout << j->getType() << " " << std::endl;
-   
-    j->makeSound();
-    
-    delete j;
-
-    std::cout << "_________" << std::endl;
-    const WrongAnimal* j = new WrongCat();
-
-    std::cout << j->getType() << " " << std::endl;
-   
-    j->makeSound();
-    
-    delete (j);
     return 0;
 }

@@ -10,7 +10,7 @@ SRCS =		Animal.cpp\
 			Brain.cpp\
 			main.cpp
 
-HEADER =	Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
+HEADER =	*.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

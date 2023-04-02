@@ -2,7 +2,7 @@
 # define CAT_HPP
 
 #include <iostream>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
 class   Cat: public AAnimal {
@@ -17,6 +17,7 @@ class   Cat: public AAnimal {
         std::string getType() const;
         void        makeSound() const;
         std::string getIdea(int index) const;
+        void        setIdea(int index, const std::string s);
         ~Cat();
 };
 

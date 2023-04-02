@@ -29,6 +29,11 @@ std::string Cat::getIdea(int index) const
     return (this->brain->getIdea(index));
 }
 
+void Cat::setIdea(int index, const std::string s)
+{
+    this->brain->setIdea(index, s);
+}
+
 Cat::Cat( const Cat &obj ){
     std::cout << "Cat Copy Constructor." << std::endl;
     *this = obj;
