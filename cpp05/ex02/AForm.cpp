@@ -61,18 +61,14 @@ const char *AForm::GradeTooLowException::what() const throw()
     return "Grade Too Low Exception";
 }
 
-
-
 std::ostream& operator<<(std::ostream &COUT, AForm const &rhs)
 {
-	COUT << "FORM INFO ------------------------------" << std::endl;
+	COUT << "_________________ FORM INFO _________________" << std::endl;
 	COUT << "Name: " << rhs.getName() << std::endl;
-
 	COUT << "Sign: " << (rhs.getSign() == 1 ? "True" : "False") << std::endl;
-
 	COUT << "Requered Sign Grade: " << rhs.getRequeredSignGrade() << std::endl;
 	COUT << "Requered Exec Grade: " << rhs.getRequeredExecGrade() << std::endl;
-	COUT << "----------------------------------------" << std::endl;
+	COUT << "_____________________________________________" << std::endl;
 	return COUT;
 }
 
