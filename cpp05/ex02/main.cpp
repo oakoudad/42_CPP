@@ -1,13 +1,14 @@
 #include "./Bureaucrat.hpp"
 #include "./ShrubberyCreationForm.hpp"
 #include "./RobotomyRequestForm.hpp"
+#include "./PresidentialPardonForm.hpp"
 #include <ctime>
 
 int main()
 {
     try{
-        RobotomyRequestForm RRF = RobotomyRequestForm("RRF");
-        Bureaucrat B = Bureaucrat("B", 45);
+        PresidentialPardonForm RRF = PresidentialPardonForm("RRF");
+        Bureaucrat B = Bureaucrat("B", 5);
 
         RRF.beSigned(B);
         RRF.execute(B);
