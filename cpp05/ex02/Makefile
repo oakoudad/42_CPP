@@ -24,6 +24,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	find . -type f ! -name "*.*" ! -name "Makefile" -delete
 
 re: fclean all
 
