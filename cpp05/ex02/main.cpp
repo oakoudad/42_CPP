@@ -1,13 +1,16 @@
 #include "./Bureaucrat.hpp"
 #include "./ShrubberyCreationForm.hpp"
+#include "./RobotomyRequestForm.hpp"
+#include <ctime>
 
 int main()
 {
     try{
-        
-        Bureaucrat B1 = Bureaucrat("B1", 50);
-        ShrubberyCreationForm PP = ShrubberyCreationForm("PP");
-        PP.execute(B1);
+        RobotomyRequestForm RRF = RobotomyRequestForm("RRF");
+        Bureaucrat B = Bureaucrat("B", 45);
+
+        RRF.beSigned(B);
+        RRF.execute(B);
     }
     catch(const std::exception& e)
     {

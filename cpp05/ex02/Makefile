@@ -5,9 +5,10 @@ FLAGS_CPP98 = -std=c++98
 SRCS =  Bureaucrat.cpp\
         AForm.cpp\
 		ShrubberyCreationForm.cpp\
+		RobotomyRequestForm.cpp\
 		main.cpp
 
-HEADER = AForm.hpp Bureaucrat.hpp ShrubberyCreationForm.hpp
+HEADER = AForm.hpp Bureaucrat.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

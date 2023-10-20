@@ -53,7 +53,7 @@ void				ShrubberyCreationForm::beSigned(Bureaucrat const &B)
 
 void		        ShrubberyCreationForm::execute(Bureaucrat const &B) const
 {
-    if (B.getGrade() > this->requeredSignGrade && B.getGrade() > this->requeredExecGrade)
+    if (B.getGrade() > this->requeredExecGrade)
         throw ShrubberyCreationForm::GradeTooLowException();
     std::ofstream outfile(B.getName());
 	outfile << std::string("  **   ****   ****  ******") << std::endl;

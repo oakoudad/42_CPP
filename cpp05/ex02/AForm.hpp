@@ -13,7 +13,6 @@ class	AForm {
 		const int			requeredSignGrade;
 		const int			requeredExecGrade;
 
-
 	public :
 		AForm();
 		AForm( const AForm &obj );
