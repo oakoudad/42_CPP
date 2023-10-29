@@ -23,7 +23,12 @@ class	AForm {
 		bool				getSign() const;
 		int					getRequeredSignGrade() const;
 		int					getRequeredExecGrade() const;
-		void				beSigned(Bureaucrat const &B);
+		void				validation(Bureaucrat const &B) const;
+
+
+		void				setSign(bool sign);
+
+		virtual void		beSigned(Bureaucrat const &B);
 		
 		virtual void		execute(Bureaucrat const &B) const = 0;
 		

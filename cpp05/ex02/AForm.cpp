@@ -24,6 +24,14 @@ AForm &AForm::operator =(const AForm &rhs)
 	return (*this);
 }
 
+void				AForm::validation(Bureaucrat const &B) const
+{
+	if (B.getGrade() > this->getRequeredExecGrade())
+        throw AForm::GradeTooLowException();
+	if (!this->getSign())
+		throw std::logic_error("is not signed");
+}
+
 std::string const	&AForm::getName() const
 {
 	return (this->name);
@@ -41,7 +49,7 @@ int					AForm::getRequeredSignGrade() const
 
 int					AForm::getRequeredExecGrade() const
 {
-	return (this->requeredSignGrade);
+	return (this->requeredExecGrade);
 }
 
 void				AForm::beSigned(Bureaucrat const &B)
@@ -50,6 +58,17 @@ void				AForm::beSigned(Bureaucrat const &B)
 		throw AForm::GradeTooLowException();
 	this->sign = true;
 }
+
+
+
+
+void	AForm::setSign(bool sign)
+{
+	this->sign = sign;
+}
+
+
+
 
 const char *AForm::GradeTooHighException::what() const throw()
 {

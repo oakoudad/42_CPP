@@ -4,12 +4,13 @@ FLAGS = -Wall -Wextra -Werror
 FLAGS_CPP98 = -std=c++98
 SRCS =  Bureaucrat.cpp\
         AForm.cpp\
-		ShrubberyCreationForm.cpp\
-		RobotomyRequestForm.cpp\
 		PresidentialPardonForm.cpp\
+		RobotomyRequestForm.cpp\
+		ShrubberyCreationForm.cpp\
 		main.cpp
 
-HEADER = AForm.hpp Bureaucrat.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+
+HEADER = AForm.hpp Bureaucrat.hpp PresidentialPardonForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

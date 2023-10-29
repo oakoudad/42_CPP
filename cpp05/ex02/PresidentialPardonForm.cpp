@@ -1,79 +1,53 @@
 #include "./PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm():name("PresidentialPardonForm"), sign(false), requeredSignGrade(25), requeredExecGrade(5)
-{}
-
-PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm &obj ):name(obj.name), requeredSignGrade(25), requeredExecGrade(5)
+PresidentialPardonForm::PresidentialPardonForm():AForm("presidential pardon", 25, 5)
 {
-	this->sign = obj.sign;
+	this->target = "PPR";
 }
 
-PresidentialPardonForm::PresidentialPardonForm( const std::string name ):name(name), requeredSignGrade(25), requeredExecGrade(5)
+PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm &obj ):AForm(obj.getName(), 25, 5)
 {
-	if (requeredSignGrade < 1 || requeredExecGrade < 1)
-		throw PresidentialPardonForm::GradeTooHighException();
-	else if (requeredSignGrade > 150 || requeredExecGrade > 150)
-		throw PresidentialPardonForm::GradeTooLowException();
-	this->sign = false;
+	this->setSign(obj.getSign());
+	this->target = obj.target;
+}
+
+PresidentialPardonForm::PresidentialPardonForm( const std::string target ):AForm("presidential pardon", 25, 5)
+{
+	this->target = target;
 }
 
 PresidentialPardonForm &PresidentialPardonForm::operator =(const PresidentialPardonForm &rhs)
 {
 	if (&rhs != this)
-		this->sign = rhs.sign;
+		this->setSign(rhs.getSign());
+	this->target = rhs.target;
 	return (*this);
 }
 
-std::string const	&PresidentialPardonForm::getName() const
+std::string const	&PresidentialPardonForm::getTarget() const
 {
-	return (this->name);
-}
-
-bool				PresidentialPardonForm::getSign() const
-{
-	return (this->sign);
-}
-
-int					PresidentialPardonForm::getRequeredSignGrade() const
-{
-	return (this->requeredSignGrade);
-}
-
-int					PresidentialPardonForm::getRequeredExecGrade() const
-{
-	return (this->requeredSignGrade);
+	return (this->target);
 }
 
 void				PresidentialPardonForm::beSigned(Bureaucrat const &B)
 {
-	if (B.getGrade() > this->requeredSignGrade)
+	if (B.getGrade() > this->getRequeredSignGrade())
 		throw PresidentialPardonForm::GradeTooLowException();
-	this->sign = true;
+	this->setSign(true);
 }
 
 void		        PresidentialPardonForm::execute(Bureaucrat const &B) const
 {
-    srand(time(0));
-    if (B.getGrade() > this->requeredExecGrade)
-        throw PresidentialPardonForm::GradeTooLowException();
-	std::cout << B.getName() << "has been pardoned by Zaphod Beeblebrox" << std::endl;
+    this->validation(B);
+	std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
             
-}
-
-const char *PresidentialPardonForm::GradeTooHighException::what() const throw()
-{
-    return "Grade Too High Exception";
-}
-
-const char *PresidentialPardonForm::GradeTooLowException::what() const throw()
-{
-    return "Grade Too Low Exception";
 }
 
 std::ostream& operator<<(std::ostream &COUT, PresidentialPardonForm const &rhs)
 {
 	COUT << "_________________ FORM INFO _________________" << std::endl;
 	COUT << "Name: " << rhs.getName() << std::endl;
+	COUT << "Target: " << rhs.getTarget() << std::endl;
 	COUT << "Sign: " << (rhs.getSign() == 1 ? "True" : "False") << std::endl;
 	COUT << "Requered Sign Grade: " << rhs.getRequeredSignGrade() << std::endl;
 	COUT << "Requered Exec Grade: " << rhs.getRequeredExecGrade() << std::endl;
