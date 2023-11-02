@@ -26,11 +26,12 @@ class	AForm {
 		void				validation(Bureaucrat const &B) const;
 
 
-		void				setSign(bool sign);
+		void						setSign(bool sign);
 
-		virtual void		beSigned(Bureaucrat const &B);
+		virtual void				beSigned(Bureaucrat const &B);
 		
-		virtual void		execute(Bureaucrat const &B) const = 0;
+		virtual void				execute(Bureaucrat const &B) const = 0;
+		virtual std::string const	&getTarget() const = 0;
 		
 		virtual ~AForm();
 		

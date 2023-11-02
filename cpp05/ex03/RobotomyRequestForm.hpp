@@ -20,10 +20,6 @@ class	RobotomyRequestForm: public AForm {
 		void				beSigned(Bureaucrat const &B);
 		
 		void		        execute(Bureaucrat const &B) const;
-
-		void print(std::ostream& os) const override {
-			os << "RobotomyRequestForm output";
-		}
 		
 		virtual ~RobotomyRequestForm();
 };
