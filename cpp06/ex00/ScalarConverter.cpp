@@ -4,17 +4,22 @@
 #include <limits>
 #include <sstream>
 
-enum convertType
-{
-    type_char,
-    type_int,
-    type_float,
-    type_double,
-    error
-};
+
+// void initDataTypes(double n, convertType type);
+// {
+//     if (type != type_char)
+//         self.char_value = n;
+//     if (type != type_int)
+//         self.int_value = n;
+//     if (type != type_float)
+//         self.float_value = n;
+//     if (type != type_double)
+//         self.double_value = n;
+// }
 
 bool isChar(const std::string& literal)
 {
+    std::cout << ScalarConverter::char_value << std::endl;
     if (literal.length() == 1 && !isdigit(literal.at(0)))
         return true;
     return false;
@@ -32,6 +37,8 @@ bool isInt(const std::string& literal)
         if (!isdigit(literal.at(i)))
             return false;
     }
+    
+    // initDataTypes()
     return true;
 }
 
@@ -39,6 +46,7 @@ bool isFloating(const std::string& literal, bool is_double = false)
 {
     int from;
 
+    
     if (is_double == false && (literal == "+inff" || literal == "-inff" || literal == "nanf"))
         return true;
     if ((is_double == false && literal.at(literal.length() - 1) != 'f') || literal.find(".") != literal.rfind("."))
@@ -49,11 +57,17 @@ bool isFloating(const std::string& literal, bool is_double = false)
             return false;
     if (is_double == false && literal.at(from) == '.' && literal.at(from + 1) == 'f')
         return false;
+    if (
+        strcmp(literal.c_str(), std::to_string(std::numeric_limits<double>::max()).c_str()) > 0
+        || strcmp(literal.c_str(), std::to_string(std::numeric_limits<double>::lowest()).c_str()) < 0
+    )
+        throw std::logic_error("Error: the number is too big or too small");
     return true;
 }
 
-convertType detectType(const std::string& literal)
+static convertType detectType(const std::string& literal)
 {
+    
     if (isChar(literal))
         return type_char;
     else if(isInt(literal))
@@ -65,7 +79,7 @@ convertType detectType(const std::string& literal)
     return error;
 }
 
-void representation(double n)
+void representation(long double n)
 {
     // CHAR
     (std::isprint(n))
@@ -79,13 +93,16 @@ void representation(double n)
     (n > std::numeric_limits<float>::max() || n < std::numeric_limits<float>::min())
         ? std::cout << "Float: impossible" << std::endl
         : std::cout << "Float: " << std::fixed << std::setprecision(1) << n << std::endl;
+    // DOUBLE
+    (n > std::numeric_limits<double>::max() || n < std::numeric_limits<double>::min())
+        ? std::cout << "Double: impossible" << std::endl
+        : std::cout << "Double: " << std::fixed << std::setprecision(1) << n << std::endl;
     
 
 }
 
 void ScalarConverter::convert(const std::string& literal)
 {
-    std::cout << ">" << detectType(literal) << std::endl;
     switch (detectType(literal))
     {
         case type_char:
