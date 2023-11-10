@@ -1,7 +1,7 @@
 NAME = convert
 CPP = g++
 FLAGS = -Wall -Wextra -Werror
-# FLAGS_CPP98 = -std=c++98
+FLAGS_CPP98 = -std=c++98
 SRCS =  ScalarConverter.cpp\
 		main.cpp
 

@@ -2,6 +2,7 @@
 
 # include <string>
 # include <iostream>
+#include <stdio.h>
 
 enum convertType
 {
@@ -13,11 +14,11 @@ enum convertType
 };
 
 class ScalarConverter {
-	private:
-		static char char_value;
-		static int int_value;
-		static float float_value;
-		static double double_value;
+    private:
+        ScalarConverter();
+        ScalarConverter(const ScalarConverter &obj);
+        ScalarConverter &operator=(const ScalarConverter &obj);
+        ~ScalarConverter();
 	public:
 		static void convert(const std::string& literal);
 };

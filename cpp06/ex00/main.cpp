@@ -8,10 +8,6 @@
 
 int main(int argc, char **argv)
 {
-    std::cout << std::endl << std::fixed 
-        << argv[1] << std::endl 
-        << std::to_string(std::numeric_limits<double>::lowest()).c_str()
-    << std::endl << std::endl;
     try
     {
         if (argc != 2 || !argv[1][0])
