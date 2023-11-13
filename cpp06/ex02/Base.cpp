@@ -40,7 +40,7 @@ void identify(Base &p) {
   } catch (std::bad_cast) {}
   try {
     C &c = dynamic_cast<C &>(p);
-    return (std::cout << "A" << std::endl, (void)a);
+    return (std::cout << "A" << std::endl, (void)c);
   } catch (std::bad_cast) {
     std::cout << "Unknown type" << std::endl;
   }
