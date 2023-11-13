@@ -1,15 +1,4 @@
 #include "ScalarConverter.hpp"
-#include <iostream>
-#include <iomanip>
-#include <limits>
-#include <sstream>
-
-struct literals {
-    char    char_val;
-    long    int_val;
-    float   float_val;
-    double  double_val;
-};
 
 bool isChar(const std::string& literal, literals &literals)
 {

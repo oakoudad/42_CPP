@@ -1,8 +1,8 @@
 #pragma once
 
-# include <string>
 # include <iostream>
-#include <stdio.h>
+# include <iomanip> // precision
+# include <limits>
 
 enum convertType
 {
@@ -11,6 +11,13 @@ enum convertType
     type_float,
     type_double,
     error
+};
+
+struct literals {
+    char    char_val;
+    long    int_val;
+    float   float_val;
+    double  double_val;
 };
 
 class ScalarConverter {
