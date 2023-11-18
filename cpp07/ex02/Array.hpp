@@ -8,7 +8,6 @@ class Array
     private:
         T            *_data;
         unsigned int _n;
-
     public:
         Array()
         {
@@ -17,10 +16,6 @@ class Array
 
         Array(const unsigned int &n)
         {
-            if (n == 0)
-            {
-
-            }
             this->_n = n;
             this->_data = new(std::nothrow) T[n];
             if (!this->_data)
