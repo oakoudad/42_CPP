@@ -35,12 +35,12 @@ class MutantStack : public std::stack<T, std::deque<T> >
             return (std::stack<T>::c.end());
         }
 
-        const_iterator cbegin()
+        const_iterator cbegin() const
         {
             return (std::stack<T>::c.cbegin());
         }
 
-        const_iterator cend()
+        const_iterator cend() const
         {
             return (std::stack<T>::c.cend());
         }

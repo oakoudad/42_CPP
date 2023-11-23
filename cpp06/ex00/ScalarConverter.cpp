@@ -81,7 +81,7 @@ void caster(literals &literals, convertType &type)
 
 void representation(literals &literals)
 {
-    if (std::isprint(literals.char_val))
+    if (literals.int_val <= 127 && std::isprint(literals.char_val))
         std::cout << "char: '" << literals.char_val << "'" << std::endl;
     else if(literals.int_val <= std::numeric_limits<char>::max() && literals.int_val >= std::numeric_limits<char>::min())
         std::cout << "char: Non displayable" << std::endl;

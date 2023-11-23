@@ -33,10 +33,15 @@ int main()
     std::cout << "---------------------" << std::endl;
 
     // insert range of iterators
+
+
+    
     Span b(5);
 
 
     std::vector<int> v = sp.getContainer();
+
+
     b.addNumbers(v.begin(), v.end());
     std::cout << b.shortestSpan() << std::endl;
     std::cout << b.longestSpan() << std::endl;

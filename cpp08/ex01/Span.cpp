@@ -19,10 +19,15 @@ void Span::addNumber(int node)
 	this->C.push_back(node);
 }
 
+
 int Span::shortestSpan() const
 {
-    std::vector<int> tmp = this->C;
-    std::sort (tmp.begin(), tmp.end());
+    std::vector<int> tmp = this->C; // 1 2 50 40 
+
+
+
+
+    std::sort(tmp.begin(), tmp.end()); // 1 2 40 50
 
     if (tmp.size() < 2)
         throw std::logic_error("NO SPACE LEFT");
@@ -30,21 +35,23 @@ int Span::shortestSpan() const
     for (unsigned int i = 0; i < tmp.size() - 1; i++)
     {
         if (n == 0)
-            n = tmp[i + 1] - tmp[i];
+            n = tmp[i + 1] - tmp[i]; // 2 - 1 = 1
         else if (n > tmp[i + 1] - tmp[i])
             n = tmp[i + 1] - tmp[i];
     }
     return (n);
 }
 
+
 int Span::longestSpan() const
 {
     std::vector<int> tmp = this->C;
-    std::sort (tmp.begin(), tmp.end());
+    std::sort(tmp.begin(), tmp.end());
     if (tmp.size() < 2)
         throw std::logic_error("NO SPACE LEFT");
     return (tmp[tmp.size() - 1] - tmp[0]);
 }
+
 
 void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {

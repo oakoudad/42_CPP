@@ -1,6 +1,6 @@
 #include "iter.hpp"
 
-void putnbr(int n)
+void putnbr(int n, char c)
 {
     std::cout << n << std::endl;
 }
